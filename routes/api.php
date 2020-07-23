@@ -20,5 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/institution','InstitutionController@instution');
 Route::get('/convenience','ConvenienceController@convenience');
-Route::get('/simulator','CreditController@calc');
 Route::post('/simulator','CreditController@calc');
