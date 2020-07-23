@@ -39,6 +39,10 @@ class CreditController extends Controller
                 $this->processArray($data, $values);
             }
 
+            if (empty($data['instituicoes']) and in_array($values['convenio'], $data['convenios'])) {
+                $this->processArray($data, $values);
+            }
+
             if (empty($data['instituicoes']) and empty($data['convenios'])) {
                 $this->processArray($data, $values);
             }
