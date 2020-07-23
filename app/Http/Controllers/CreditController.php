@@ -53,6 +53,7 @@ class CreditController extends Controller
     public function calc(Request $request)
     {
 
+        try {
             $validate = $request->validate([
                 'valor_emprestimo' => 'required'
             ]);
@@ -71,7 +72,7 @@ class CreditController extends Controller
 
             $this->newData = response($this->newData)->header('Content-Type','application/json')->setStatusCode(200);
 
-        try {} catch (\Throwable $th) {
+        } catch (\Throwable $th) {
 
             $this->newData = response('')->header('Content-Type', 'application/json')->setStatusCode(500, 'Fail loading data');
 
